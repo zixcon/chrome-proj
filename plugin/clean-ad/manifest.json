@@ -1,0 +1,26 @@
+
+{
+    "name": "清除页面广告",
+    "version": "2.0",
+    "manifest_version": 2,
+    "description": "简易制作的清除页面广告的chrome扩展程序",
+    "permissions": [
+        "http://*/"
+    ],
+    "icons": {
+        "16": "cleaning.jpg",
+        "128": "cleaning.jpg"
+    },
+    "browser_action": {
+        "default_icon": "cleaning.jpg",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [{
+        "matches": ["http://*/", "https://*/", "http://*/*", "https://*/*"],
+        "js": ["jquery-3.3.1.min.js", "clean-ad-script.js"]
+    }],
+    "background": {
+      "scripts": ["clean-ad-script.js"]
+    }
+}
+
